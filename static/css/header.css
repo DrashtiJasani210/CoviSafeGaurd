@@ -1,0 +1,297 @@
+body{
+    background-color: #fbfdff;
+}
+.logo {
+    color: var(--color-txt);
+    font-size: 2rem;
+    font-weight: 900;
+}
+.logo i {
+    color: red;
+}
+.nav {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* count Info */
+.count {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.count-icon {
+    --width: 70px;
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    margin-right: 15px;
+}
+
+.count-info h5 {
+    font-size: 1.5rem;
+}
+
+.count-info span {
+    display: inherit;
+    margin-top: -14px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.count-confirmed .count-icon {
+    background-color: #ffa0a0;
+    color: red;
+}
+
+.count-confirmed .count-info h5 {
+    color: red;
+}
+
+.count-recovered .count-icon {
+    background-color: #bffabf;
+    color: green;
+}
+
+.count-recovered .count-info h5 {
+    color: green;
+}
+
+.count-death .count-icon {
+    background-color: #e2e8f0;
+    color: #373c43;
+}
+
+.count-death .count-info h5 {
+    color: #373c43;
+}
+
+/* countries table */
+.table-countries {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table-countries thead tr th,
+.table-countries tbody tr td {
+    border-bottom: 1px solid var(--bg-body);
+}
+
+.table-countries th {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.table-countries td {
+    font-weight: 0.9rem;
+    padding: 0.5rem;
+    width: 25%;
+    text-align: center;
+}
+
+.table-countries tbody tr:hover {
+    background-color: var(--bg-hover);
+}
+/* end countries table */
+
+/* loader */
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--bg-body);
+    font-size: 10rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.loading .loader {
+    visibility: visible;
+    opacity: 1;
+}
+/* end loader */
+
+/* box */
+.box {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--bg-content);
+    box-shadow: var(--shadow);
+    padding: 15px;
+}
+
+.box-hover {
+    transition: transform 0.2s ease-in-out;
+}
+
+.box-hover:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: rgb(0 0 0 / 10%) 0px 15px 30px;
+    background-color: white;
+}
+
+.box-header {
+    padding: 5px 0 30px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-txt);
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* For Canvas */
+.canvas
+{
+    width: 90%;
+    height: 700px;
+    margin-top: 5px;
+    justify-content: center;
+}
+.tooltipDesign{
+    background:rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    color: black;
+    opacity: 1;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%,0);
+    transition: all 0.1s ease;
+    border: 2px solid black;
+    padding: 5px;
+}
+.tooltipUL{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: smaller;
+    font-family: sans-serif;
+}
+.tooltiptitle{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    font-size: 15px;
+}
+.colorSquare{
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 4px;
+}
+.displayblockSpan{
+    display: block;
+}
+
+/* country dropdown */
+.lbl{
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.country-item {
+    padding: 5px 15px;
+    border-color: black;
+    cursor: pointer;
+}
+/* end country dropdown */
+
+/*Info for covid precausion*/
+.info{
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #bffabf;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    text-align: left;
+    border-radius: 2rem;
+}
+.info .record{
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+    text-align: left;
+    padding: 0.8rem;
+}
+.info .record img{
+    height: 4rem;
+    width: 4rem;
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius:3rem;
+}
+/*end info*/
+
+/*Info for covid symptoms*/
+.symp{
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #fcbfbf;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    text-align: left;
+    border-radius: 2rem;
+}
+.symp h2,.info h2{
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-txt);
+    position: relative;
+    text-transform: uppercase;
+}
+.symp h3{
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-txt);
+    position: relative;
+    text-transform: uppercase;
+}
+/*end info*/
+
+/* footer */
+.footer {
+    margin-top: 1rem;
+    background-color: lightgrey;
+    box-shadow: var(--shadow);
+    font-size: 1.22rem;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
+/* end footer */
+
+/*Submit button*/
+.btn{
+    background-color: gainsboro;
+    color: black;
+    margin:15px 0px 0px 30px;
+    width: 100px;
+    border: 1px solid black;
+}
+.btn:hover{
+    border:3px solid black;
+}
+/*-----------------*/
+
+/*alert*/
+.alert{
+    visibility: hidden;
+}

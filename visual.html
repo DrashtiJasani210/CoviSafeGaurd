@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoviSafeGaurd</title>
+    <link rel="shortcut icon" href="./static/images/favicon.png" type="image/png">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <!-- For small Icons -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- editable Select.js and .css CND for making dropdown editable -->
+    <script
+        src="http://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
+    <link href="http://rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css"
+        rel="stylesheet">
+
+    <!-- Userdefined CSS in static/css folder -->
+    <link href="static/css/header.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="nav mt-2">
+        <a href="index.html" class="logo">
+          C<i class="bx bxs-virus-block bx-tada"></i>viSafeGaurd
+        </a>
+      </div>
+    
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light mt-3" style="background-color: lightgrey;">
+        <div class="container-fluid">
+          <h2 class="navbar-brand" href="#">Menu</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="visual.html">Visualization</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <!-- country select -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <form method="post" id="sample_form">
+                    <div class="form-group">
+                        <div class="box">
+                            <div class="box-header">
+                                Select Country :
+                            </div>
+                            <select name="country" id="country" class="form-control country-item"
+                                onchange="getCountryData()">
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- end country select -->
+
+        <!-- tracking information -->
+        <div class="box">
+            <div class="box-header">
+                Current cases :
+            </div>
+            <div class="row">
+                <!-- left content -->
+                <div class="col-8 col-md-12 col-sm-12">
+                    <div class="row">
+                        <!-- counter -->
+                        <div class="col-4 col-md-4 col-sm-12">
+                            <div class="box box-hover">
+                                <div class="count count-confirmed">
+                                    <div class="count-icon">
+                                        <i class="bx bxs-virus"></i>
+                                    </div>
+                                    <div class="count-info">
+                                        <h5 id="confirmed-total"></h5>
+                                        <span>confirmed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- counter -->
+                        <!-- counter -->
+                        <div class="col-4 col-md-4 col-sm-12">
+                            <div class="box box-hover">
+                                <div class="count count-recovered">
+                                    <div class="count-icon">
+                                        <i class="bx bxs-smile"></i>
+                                    </div>
+                                    <div class="count-info">
+                                        <h5 id="recovered-total"></h5>
+                                        <span>recovered</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- counter -->
+                        <!-- counter -->
+                        <div class="col-4 col-md-4 col-sm-12">
+                            <div class="box box-hover">
+                                <div class="count count-death">
+                                    <div class="count-icon">
+                                        <i class="bx bxs-sad"></i>
+                                    </div>
+                                    <div class="count-info">
+                                        <h5 id="death-total"></h5>
+                                        <span>deaths</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- counter -->
+
+        <!-- Chart -->
+        <div class="box">
+            <div class="box-header">
+                Cases Of last 30 days :
+            </div>
+        </div>
+        <div class="canvas" id="canvas">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+    <!-- End Chart -->
+
+    <script src="static/JS/chart.js"></script>
+    <!-- footer -->
+    <div class="footer">
+        Source from <a
+            href="https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
+            target="_blank">api.apify.com</a>
+        <br>
+        <b>Designed by</b> Drashti Jasani, Rutvi Kava & Vishva Shah
+    </div>
+    <!-- end footer -->
+</body>
+
+</html>
